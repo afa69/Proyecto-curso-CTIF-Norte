@@ -1,0 +1,467 @@
+/* ESTILOS GENERALES*/
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    background-image: url('../img/pista.jpg');
+    background-color:rgb(90,119,64);
+    background-size: cover;
+    font-family: sans-serif;
+    font-size: 18px;
+    height: 100%;
+    padding-bottom: 100px;
+
+}
+header{
+    width: 100%;
+    height: 135px;
+    background-color: rgba(90,119,64,0.8);
+}
+header img{
+    width: auto;
+}
+
+
+footer{
+    width: 100%;
+    background-color: rgba(90,119,64,0.8);
+    padding: 1em;
+    color:white;    
+    margin-top:1.5em;
+    display: flex;
+    justify-content: flex-start;    
+    align-items: center;
+    
+    display:-webkit-flex;
+    -webkit-justify-content:flex-start;
+    -webkit-align-items: center;
+    
+    display:-moz-flex;
+    -moz-justify-content:flex-start;
+    -moz-align-items: center;
+    display:-ms-flex;    
+    -ms-justify-content:flex-start;
+    -ms-align-items: center;
+    
+    position: fixed;
+    bottom: 0;
+    
+}
+button{
+    padding:8px;
+    background-color: white;
+    border: none;    
+    font-size: 0.8em;
+    margin-left: 15px;    
+}
+button:hover{
+    background-color: #d6fb08;
+}
+
+/* ESTILOS DE LOS ICONOS ESTRELLA AL PASAR EL ROTÓN SOBRE ELLOS*/
+.fa:hover:before{
+    color:#d6fb08;
+}
+
+
+/* ESTILOS PARA LAS ANIMACIONES DE LA ZONA DE CABECERA */
+.pelota{
+    position: relative;
+    z-index: 100;
+    opacity:0;
+    animation: anim-pelota 3s 1.4s forwards;
+    
+}
+@keyframes anim-pelota{
+    0%{
+        transform:translateX(0) rotate(0);
+        opacity:1;        
+    }
+    100%{
+        transform:translateX(80vw) rotate(720deg);
+        opacity:1;
+    }
+}
+
+.quier{
+    position: relative;
+    z-index: 100;
+    opacity: 0;
+    animation: anim-quier 3s 1s forwards;
+}
+@keyframes anim-quier{
+    0%{
+        opacity: 0;
+        transform: rotateY(180deg);
+    }
+    100%{
+        opacity: 1;
+        transform: rotateY(0deg);
+    }
+}
+.corazon{
+    opacity: 0;
+    margin-left: -60px;
+    transform:scale(0.9);
+    animation: anim-corazon 0.5s 2.6s infinite alternate, aparece 1s 2.6s forwards;
+}
+
+/* esta animación es para que el efecto de aparecer no sea tan brusco como si lo hacemos en 0.5s*/
+@keyframes aparece{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes anim-corazon{
+    0%{
+        transform:scale(0.9);
+    }
+    100%{
+        transform:scale(1);    
+    }
+}
+
+.padel{
+    opacity: 0;
+    position: relative;
+    animation: anim-padel 3s 1.4s forwards;
+}
+
+@keyframes anim-padel{
+    0%{
+        opacity: 0;
+        transform: rotateY(180deg);
+    }
+    100%{
+        opacity: 1;
+        transform: rotateY(0deg);
+    }
+}
+.sombra-pala{
+    position: relative;
+    float:right;
+    top:50%;
+    opacity: 0.3;
+    
+}
+
+
+/* ESTILOS PARA LA ZONA DE CONTENIDO*/
+main{
+    
+    width:80vw;
+    margin:3% auto;    
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;      
+    
+    display:-webkit-flex;
+    -webkit-content:row-wrap;
+    -webkit-justify-content:space-between;
+    
+    display:-moz-flex;
+    -moz-content:row-wrap;
+    -moz-justify-content:space-between;
+    
+    display:-ms-flex;
+    -ms-content:row-wrap;
+    -ms-justify-content:space-between;
+
+}
+
+.elem{
+    flex:1 1 30%;
+    overflow:hidden;
+    position: relative;
+    background-color: white;
+    border:10px solid white;
+    
+    border-radius: 0 40px;
+    margin: 0.9em;
+    box-shadow:5px 5px 25px black;
+    text-align: center;
+}
+.elem:hover{
+    border:10px solid white;
+}
+.elem img{
+    width:100%;    
+    transition: all 1.5s;
+    margin-top: 15px;
+    
+}
+.elem:hover img{
+    transform:scale(1.5);
+}
+h2{
+    margin:0;
+    padding: 0;
+}
+p.p-mask{
+    color:white;
+    font-style: italic;
+    font-size: 1.2em;
+    font-family: serif;
+    font-weight: bold;
+    padding: 10%;
+    text-align: center;
+    position: relative;
+    top:20%;
+    transform:scale(0);
+    opacity: 0;
+    transition: all 1.5s;
+    
+}
+.mask:hover p{
+    transform: scale(1);
+    opacity:1;
+}
+
+.mask{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    /*overflow: hidden;*/
+    background-color: rgba(90,119,64,0.7);
+    transition: all 1s;
+    opacity: 0;
+    cursor:pointer;
+    
+}
+.mask:hover{
+    opacity: 1;
+}
+.mask h2{
+    opacity: 0;
+    transition: all 1.5s;
+    background-color: black;
+    color:white;
+    padding: 10%;
+    text-align: center;
+}
+
+
+
+/*ZONA PALAS */
+#palas{    
+    animation: anim-palas 1.5s forwards;
+}
+
+@keyframes anim-palas{
+    0%{
+        transform:translateY(-55%);    
+        opacity: 0;
+    }
+    100%{
+        transform:translateY(0px);
+        opacity: 1;
+    }
+}
+
+#palas .mask h2{        
+    transform:rotate(180deg);
+    
+}
+
+#palas .mask:hover h2{
+    opacity: 1;
+    transform:rotate(0deg);
+    transform: translateY(40%);
+}
+
+/* ZONA ROPA */
+#ropa{
+
+    animation: anim-ropa 1.5s;
+}
+
+#ropa .mask h2{
+    opacity: 1;
+    transform:translateY(400px);
+}
+#ropa .mask:hover h2{
+    transform:translateY(50%);    
+}
+
+@keyframes anim-ropa{
+    0%{        
+        transform:translateX(150%);    
+        opacity: 0;
+    }
+    100%{
+        transform:translateX(0px);
+        opacity: 1;
+    }
+}
+
+
+/* ZONA CALZADO*/
+#calzado{
+    
+    animation: anim-calzado 1s;
+}
+#calzado .mask h2{    
+    transform:translate(-500px,50%);
+    
+}
+#calzado .mask:hover h2{
+    opacity: 1;
+    transform:translate(0px,50%);    
+    
+}
+
+
+@keyframes anim-calzado{
+    0%{    
+        transform:translateX(-80%);    
+        opacity: 0;
+    }
+    100%{
+        transform:translateX(0px);
+        opacity: 1;
+    }
+}
+
+/* ZONA BOLAS*/
+#bolas{
+    
+    animation: anim-bolas 1s;
+}
+#bolas .mask h2{
+    transform:scale(0) translateY(50%);
+}
+#bolas .mask:hover h2{
+    opacity: 1;    
+    transform:scale(1) translateY(50%);
+}
+
+
+@keyframes anim-bolas{
+    0%{
+        transform:scale(0);    
+        opacity: 0;
+    }
+    100%{
+        transform:scale(1);
+        opacity: 1;
+    }
+}
+
+/* ZONA ACCESORIOS*/
+#accesorios{    
+    animation: anim-accesorios 1s;
+}
+#accesorios .mask h2{        
+    transform: translateY(50%) rotateY(180deg);
+}
+#accesorios .mask:hover h2{
+    opacity: 1;    
+    transform: translateY(50%) rotateY(0deg);
+}
+
+
+@keyframes anim-accesorios{
+    0%{
+        transform:translateX(-60%) rotate(360deg);
+        opacity: 0;
+    }
+    100%{
+        transform:translateX(0px) rotate(0);
+        opacity: 1;
+    }
+}
+
+/* ZONA BOLSAS*/
+#bolsa{    
+    animation: anim-bolsa 1s;
+}
+#bolsa .mask h2{        
+    transform: translateY(150%) rotateX(180deg);
+}
+#bolsa .mask:hover h2{
+    opacity: 1;    
+    transform: translateY(50%) rotateX(0);
+}
+
+
+@keyframes anim-bolsa{
+    0%{       
+        transform:translateY(40%);    
+        opacity: 0;
+    }
+    100%{
+        transform:translateY(0px);
+        opacity: 1;
+    }
+}
+
+/* MEDIA QUERIES */
+
+/* EN TAMAÑOS MENORES A 990PX OCULTO LA IMAGEN DE LA PELOTA Y LA IMAGEN DE LA SOMBRA DE LA PALA*/
+@media (max-width:990px){
+    .pelota{
+        display: none;
+        animation: none;
+        transform: none;
+    }   
+    .sombra-pala{
+        display:none;
+    }
+}
+
+/* EN TAMAÑOS MENORES A 650PX CAMBIO EL TAMAÑO DEL HEADER Y DE LA IMAGEN DEL CORAZÓN */
+/*    ADEMÁS LOS ELEMENTOS DEL FOOTER SE DISTRIBUYEN EN COLUMNA */
+
+@media (max-width:650px)
+{
+    header{
+        height:40%;
+    }
+    header img{
+        width: 40%;
+    }
+    header .corazon{
+        width: 10%;
+        margin-left: -1.5em;
+    }
+    h2{
+        font-size: 0.8em;
+    }
+    .mask p{
+        font-size:0.8em;
+    }
+}
+
+/* EN TAMAÑOS MENORES DE 450PX  EL CONTENIDO DE LA ZONA PRINCIPAL Y DEL FOOTER SE DISTRIBUYEN EN COLUMNA */
+@media (max-width:450px)
+{
+    main{
+        flex-flow: column;
+        -webkit-flex-flow:column;
+        -moz-flex-flow:column;
+        -ms-flex-flow:column;
+    }
+    footer{
+        flex-flow: column;
+        -webkit-flex-flow:column;
+        -moz-flex-flow:column;
+        -ms-flex-flow:column;
+    }
+    footer i{ 
+        margin-right: 5px;
+    }
+    button{
+        margin-left:0;
+        margin-top: 10px;
+    }
+}

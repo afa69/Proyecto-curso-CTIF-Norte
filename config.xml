@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+    xmlns:gap   = "http://phonegap.com/ns/1.0"
+    id          = "org.madrid.educacion"
+    versionCode = "10"
+    version     = "1.0.0" >
+
+<!-- versionCode is optional and Android only -->
+
+  <name>Quiero Pádel</name>
+
+  <description>
+      App de una tienda de pádel
+  </description>
+
+  <author href="#" email="ana.feijoo@educa.madrid.org">
+      Ana Feijóo
+  </author>
+
+<icon src="res\drawable-hdpi\ic_launcher.png"/>
+<icon src="res\drawable-mdpi\ic_launcher.png"/>
+<icon src="res\drawable-xhdpi\ic_launcher.png"/>
+<icon src="res\drawable-xxhdpi\ic_launcher.png"/>
+<icon src="res\drawable-xxxhdpi\ic_launcher.png"/>
+
+</widget>
+
